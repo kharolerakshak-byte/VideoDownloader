@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Downloader</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    <div class="floating-icons">
+        <div class="floating-icon">📱</div>
+        <div class="floating-icon">🎥</div>
+        <div class="floating-icon">📸</div>
+        <div class="floating-icon">🎵</div>
+        <div class="floating-icon">📺</div>
+        <div class="floating-icon">📹</div>
+        <div class="floating-icon">🎬</div>
+        <div class="floating-icon">📷</div>
+    </div>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">Universal Downloader</h1>
+            <p class="tagline">Download from YouTube, Instagram, Twitter, Facebook & more</p>
+            <div class="platforms">
+                <div class="platform-tag">
+                    <span class="platform-icon">▶️</span>
+                    YouTube
+                </div>
+                <div class="platform-tag">
+                    <span class="platform-icon">📸</span>
+                    Instagram
+                </div>
+                <div class="platform-tag">
+                    <span class="platform-icon">🐦</span>
+                    Twitter
+                </div>
+                <div class="platform-tag">
+                    <span class="platform-icon">📘</span>
+                    Facebook
+                </div>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="card">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('single', event)">Single Download</button>
+                    <button class="tab" onclick="switchTab('bulk', event)">Bulk Download</button>
+                    <button class="tab" onclick="switchTab('downloads', event)">My Downloads</button>
+                </div>
+                <div id="single-tab" class="tab-content active">
+                    <div class="input-group">
+                        <label class="input-label" for="url-input">Enter URL to download</label>
+                        <input type="text" id="url-input" class="input-field" placeholder="https://www.youtube.com/watch?v=... or https://www.instagram.com/p/...">
+                    </div>
+                    <button class="btn" onclick="downloadContent()">
+                        <span class="spinner" id="spinner" style="display: none;"></span>
+                        Download Content
+                    </button>
+                    <div id="status" class="status" style="display: none;"></div>
+                </div>
+                <div id="bulk-tab" class="tab-content">
+                    <div class="input-group">
+                        <label class="input-label" for="bulk-urls">Enter multiple URLs (one per line)</label>
+                        <textarea id="bulk-urls" class="input-field textarea" placeholder="https://www.youtube.com/watch?v=...
+https://www.instagram.com/p/...
+https://www.twitter.com/user/status/..."></textarea>
+                    </div>
+                    <button class="btn" onclick="bulkDownload()">
+                        <span class="spinner" id="bulk-spinner" style="display: none;"></span>
+                        Download All
+                    </button>
+                    <div id="bulk-status" class="status" style="display: none;"></div>
+                </div>
+                <div id="downloads-tab" class="tab-content">
+                    <div class="downloads-grid" id="downloads-grid">
+                        <!-- Downloads will be loaded here -->
+                    </div>
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-state-icon">📁</div>
+                        <p>No downloads yet. Start downloading to see your files here!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>
